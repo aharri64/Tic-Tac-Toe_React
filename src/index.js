@@ -23,7 +23,7 @@ class Board extends React.Component {
 
     handleClick(i) {
         const squares = this.state.squares.slice();
-        id (calculateWinner(squares) || squares[i]) {
+        if (calculateWinner(squares) || squares[i]) {
             return;
         }
         squares[i] = this.state.xIsNext ? 'X' : 'O';
@@ -74,22 +74,30 @@ class Board extends React.Component {
     }
 }
 
-    class Game extends React.Component {
-        render() {
-            return (
-            <div className="game">
-                <div className="game-board">
-                <Board />
-                </div>
-                <div className="game-info">
-                <div>{/* status */}</div>
-                <ol>{/* TODO */}</ol>
-                </div>
-            </div>
-            );
+class Game extends React.Component {
+    Constructor(props) {
+        super(props);
+        this.state = {
+            history: [{
+                squares: Array(9),fill(null),
+            }],
+            xIsNext: true
         }
     }
-  
+    render() {
+        return (
+        <div className="game">
+            <div className="game-board">
+            <Board />
+            </div>
+            <div className="game-info">
+            <div>{/* status */}</div>
+            <ol>{/* TODO */}</ol>
+            </div>
+        </div>
+        );
+    }
+}
 
 function calculateWinner(squares) {
     const lines = [
