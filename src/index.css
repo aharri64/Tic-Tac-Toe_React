@@ -1,6 +1,10 @@
 body {
+  display: flex;
+  justify-content: center;
+
   font: 14px "Century Gothic", Futura, sans-serif;
   margin: 20px;
+  margin-top: 100px;
 }
 
 ol,
@@ -19,18 +23,19 @@ ul {
 }
 
 .square {
-  background: #fff;
+  background: rgb(0, 0, 0);
+  color: aliceblue;
   border: 1px solid #999;
   float: left;
-  font-size: 24px;
+  font-size: 75px;
   font-weight: bold;
   line-height: 34px;
-  height: 34px;
+  height: 100px;
   margin-right: -1px;
   margin-top: -1px;
   padding: 0;
   text-align: center;
-  width: 34px;
+  width: 100px;
 }
 
 .square:focus {
