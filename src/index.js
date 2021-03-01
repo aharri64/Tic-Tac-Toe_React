@@ -74,12 +74,12 @@ class Game extends React.Component {
         });
     }
 
-    jumpto(step) {
-        this.setState ({
+    jumpTo(step) {
+        this.setState({
             stepNumber: step,
             xIsNext: (step % 2) === 0
         });
-    }
+      }
 
     render() {
         const history = this.state.history;
@@ -90,12 +90,12 @@ class Game extends React.Component {
             const desc = move ?
                 'Go to move #' + move :
                 'Go to game start';
-            return (
-                <li key={move}>
+        return (
+            <li key={move}>
                 <button onClick={() => this.jumpTo(move)}>{desc}</button>
-                </li>
-            );
-        });
+            </li>
+        );
+    });
 
         let status;
         if (winner) {
